@@ -92,6 +92,30 @@ class Inventory():
                         i.getOS() )
         return output
     
+    def getNotAvailableCamera(self):
+        output = ""
+        output += "{:<10}{:<30}{:<10}{:<12}{:<10}\n".format("AssetTag", 
+                    "Description", "Available", "Due Date", "Zoom")
+        if len(self.cameraList) == 0:
+            output += "There is no camera to display."
+        else:
+            for i in self.cameraList:
+                if i.getIsAvailable() == "No":
+                    output += str(i)
+        return output
+
+    def getNotAvailableLaptop(self):
+        output = ""
+        output += "{:<10}{:<30}{:<10}{:<12}{:<10}\n".format("AssetTag", 
+                    "Description", "Available", "Due Date", "OS")
+        if len(self.laptopList) == 0:
+            output += "There is no laptop to display."
+        else:
+            for i in self.laptopList:
+                if i.getIsAvailable() == "No":
+                    output += str(i)
+        return output
+
     def loanCamera(self, assetTag, dueDate):
         success = False
         if len(assetTag) > 0 and len(dueDate) > 0:
