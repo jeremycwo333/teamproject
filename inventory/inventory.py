@@ -134,7 +134,7 @@ class Inventory():
                         foundAsset.setIsAvailable(True)
                         foundAsset.setDueDate("")
                         success = True
-            return success
+        return success
 
     def returnCamera(self, assetTag):
         return self.returnAsset(assetTag)
