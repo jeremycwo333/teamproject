@@ -152,11 +152,10 @@ class Inventory():
             foundAsset = self.findAsset(assetTag)
             if foundAsset != None:
                 if foundAsset.getIsAvailable() == "No":
-                    foundAsset.setIsAvailable(True)
-                    foundAsset.setDueDate("")
-                    success = True
-        
-        return success
+                        foundAsset.setIsAvailable(True)
+                        foundAsset.setDueDate("")
+                        success = True
+            return success
 
     def returnCamera(self, assetTag):
         return self.returnAsset(assetTag)
