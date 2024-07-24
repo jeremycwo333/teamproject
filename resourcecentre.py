@@ -17,7 +17,7 @@ class ResourceCenter:
         choice = -1
         while not 1 <= choice <= 5:
             print("\n==============================================")
-            print('RESOURCE CENTRE SYSTEM By Sheila:')
+            print('RESOURCE CENTRE SYSTEM By Jeremy:')
             print("1. Add item")
             print("2. Display Inventory")
             print("3. Loan item")
