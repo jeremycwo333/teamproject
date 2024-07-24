@@ -41,21 +41,18 @@ class Inventory():
         # return the found laptop, return None if not found.
         # **Don't forget to create test cases for this new method.
         # Check for existing laptop
-
-        notExist = True
-        for l in self.laptopList:
-            currentTag = l.getAssetTag()
+    def findAsset(self,assetTag):
+        FoundAsset = None
+        for c in self.cameraList:
+            currentTag = c.getAssertTag()
             if currentTag == assetTag:
-                notExist = False
-                error_message = "Asset already exists."
+                FoundAsset = c
+        for l in self.laptopList:
+            currentTag = l.getAssertTag()
+            if currentTag == assetTag:
+                FoundAsset = 1
+        return FoundAsset
         
-        if correct and notExist:
-            new_laptop = Laptop(assetTag, description, os)
-            self.laptopList.append(new_laptop)
-            return True
-        else:
-            print(error_message)
-            return False
     
     def getAvailableCamera(self):
         output = ""
